@@ -4,6 +4,7 @@ import Navbar from './components/www/site/Navbar';
 import AppRoutes from './routes/AppRoutes';
 import { Header } from './components/www/site/Header';
 import Footer from './components/www/site/Footer';
+import Contacto from './pages/www/contacto/Contacto';
 
 function App() {
   return (

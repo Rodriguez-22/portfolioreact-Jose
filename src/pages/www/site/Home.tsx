@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
-import PerfilLateral from "@/components/www/Home/PerfilLateral";
 import ResumenContenido from "@/components/www/Home/ResumenContenido";
 
 const Home = () => {
@@ -18,7 +17,6 @@ const Home = () => {
   ) : (
     <main className="container mx-auto p-4">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <PerfilLateral />
         <ResumenContenido />
       </div>
     </main>

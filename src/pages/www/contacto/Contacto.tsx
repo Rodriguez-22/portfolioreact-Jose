@@ -18,11 +18,12 @@ const Contacto = () => {
       </div>
     ) : (
       <main className="container mx-auto py-8 px-4">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="flex flex-col gap-8">
           <ContactForm />
           <MapaUbicacion />
         </div>
       </main>
+
     )
   )
 }

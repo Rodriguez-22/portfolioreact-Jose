@@ -1,118 +1,89 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+// formulario.tsx
+import React, { useState } from "react";
 
-const ContactForm = () => {
-  const form = useRef<HTMLFormElement>(null);
-  const [status, setStatus] = useState("");
+const Formulario = () => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    correo: "",
+    asunto: "",
+    mensaje: "",
+  });
 
-  const sendEmail = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!form.current) return;
-
-    emailjs
-      .sendForm(
-        "service_661xpdi",
-        "template_eeiyed9",
-        form.current,
-        "t9vTtJjBUaSFDHD-i"
-      )
-      .then(
-        () => {
-          setStatus("✅ Mensaje enviado con éxito");
-          form.current?.reset();
-        },
-        (error) => {
-          console.error(error);
-          setStatus("❌ Hubo un error al enviar el mensaje");
-        }
-      );
+    console.log("Datos enviados:", formData);
+    // Aquí puedes agregar lógica para enviar al backend si quieres
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-xl">
-      <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
-        Contáctame 📬
-      </h2>
-
-      <form ref={form} onSubmit={sendEmail} className="space-y-6">
-        {/* Nombre */}
+    <div className="bg-white p-6 rounded shadow h-full">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
-            Nombre Empresa:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Nombre Empresa:</label>
           <input
             type="text"
-            id="name"
-            name="name"
+            name="nombre"
             placeholder="Tu nombre completo"
+            value={formData.nombre}
+            onChange={handleChange}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             required
-            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
-        {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
-            Correo Electrónico:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Correo Electrónico:</label>
           <input
             type="email"
-            id="email"
-            name="email"
+            name="correo"
             placeholder="Tu correo electrónico"
+            value={formData.correo}
+            onChange={handleChange}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             required
-            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
-        {/* Asunto */}
         <div>
-          <label htmlFor="subject" className="block text-sm font-semibold text-gray-700">
-            Asunto:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Asunto:</label>
           <input
             type="text"
-            id="subject"
-            name="subject"
+            name="asunto"
             placeholder="Asunto del mensaje"
+            value={formData.asunto}
+            onChange={handleChange}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             required
-            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
-        {/* Mensaje */}
         <div>
-          <label htmlFor="message" className="block text-sm font-semibold text-gray-700">
-            Mensaje:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Mensaje:</label>
           <textarea
-            id="message"
-            name="message"
+            name="mensaje"
             placeholder="Escribe tu mensaje aquí"
+            rows={4}
+            value={formData.mensaje}
+            onChange={handleChange}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             required
-            rows={5}
-            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
           ></textarea>
         </div>
 
-        {/* Botón */}
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
+          className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition"
         >
-          Enviar mensaje
+          Enviar
         </button>
-
-        {/* Estado del mensaje */}
-        {status && (
-          <p className={`mt-4 text-center text-sm ${status.includes("éxito") ? "text-green-600" : "text-red-500"}`}>
-            {status}
-          </p>
-        )}
       </form>
     </div>
   );
 };
 
-export default ContactForm;
+export default Formulario;
