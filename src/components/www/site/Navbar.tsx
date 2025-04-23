@@ -1,4 +1,4 @@
-import { Disclosure, DisclosureButton, Menu, MenuButton,} from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton } from '@headlessui/react';
 import { Bars3Icon, BellIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
@@ -83,6 +83,25 @@ export default function Navbar() {
             </div>
           </div>
         </div>
+
+        {/* Menú móvil */}
+        <DisclosurePanel className="sm:hidden">
+          <div className="space-y-1 px-2 pt-2 pb-3">
+            {opciones.map((item) => (
+              <Disclosure.Button
+                key={item.name}
+                as="a"
+                href={item.href}
+                className={classNames(
+                  item.current ? 'bg-neutral-800 text-white' : 'text-gray-200 hover:bg-neutral-700 hover:text-white',
+                  'block px-3 py-2 rounded-md text-base font-medium'
+                )}
+              >
+                {item.name}
+              </Disclosure.Button>
+            ))}
+          </div>
+        </DisclosurePanel>
       </Disclosure>
 
       {/* Espacio reservado para la barra fija */}
