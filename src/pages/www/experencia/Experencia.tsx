@@ -1,4 +1,3 @@
-import React from 'react';
 import Contenido_Experencia from '@/components/www/experencia/Contenido_Experencia';
 
 const Experiencia = () => {
