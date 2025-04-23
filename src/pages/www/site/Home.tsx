@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import ResumenContenido from "@/components/www/Home/ResumenContenido";
 

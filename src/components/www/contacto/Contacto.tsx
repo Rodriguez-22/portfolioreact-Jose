@@ -1,5 +1,4 @@
 // Contacto.tsx
-import React from "react";
 import Formulario from "./Formulario";
 import MapaUbicacion from "./Mapa";
 

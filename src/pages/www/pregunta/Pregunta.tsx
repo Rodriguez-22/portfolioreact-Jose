@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Contenido_Preguntas from '@/components/www/preguntas/Contenido_Preguntas'; // Ajusta la ruta según tu estructura
 
 const Pregunta = () => {
