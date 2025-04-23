@@ -1,8 +1,8 @@
+import { Routes, Route } from 'react-router-dom';
 import Contacto from "@/pages/www/contacto/Contacto";
 import Home from "@/pages/www/site/Home";
 import Pregunta from "@/pages/www/pregunta/Pregunta";
 import Experencia from "@/pages/www/experencia/Experencia";
-import { Route, Routes } from "react-router-dom"
 
 const AppRoutes = () => {
   return (
