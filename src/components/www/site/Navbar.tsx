@@ -20,12 +20,15 @@ export default function Navbar() {
       <Disclosure as="nav" className="bg-blue-400 shadow-lg fixed top-0 left-0 right-0 z-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
+            {/* Botón del menú en móviles */}
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="sr-only">Open main menu</span>
                 <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
               </DisclosureButton>
             </div>
+
+            {/* Logo y enlaces de la barra de navegación */}
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex flex-shrink-0 items-center">
                 <img
@@ -34,6 +37,7 @@ export default function Navbar() {
                   alt="Your Company"
                 />
               </div>
+
               <div className="hidden sm:ml-6 sm:flex sm:space-x-4">
                 {opciones.map((item) =>
                   item.download ? (
@@ -60,6 +64,8 @@ export default function Navbar() {
                 )}
               </div>
             </div>
+
+            {/* Icono de notificaciones */}
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 type="button"
