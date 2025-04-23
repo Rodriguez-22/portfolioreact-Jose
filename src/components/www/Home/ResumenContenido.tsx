@@ -3,7 +3,7 @@ import Carta from "./Card";
 
 const ResumenContenido: React.FC = () => {
   return (
-    <section className=" col-span-1 md:col-span-4 min-h-screen w-full bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 py-12 px-6 flex justify-center items-start">
+    
       <div className="w-full max-w-6xl bg-white dark:bg-gray-900 rounded-xl shadow-xl p-10 transition-all duration-300">
         <div className="max-w-xl mx-auto px-4">
         {/* Sección Perfil */}
@@ -77,7 +77,6 @@ const ResumenContenido: React.FC = () => {
           </div>
         </section>
       </div>
-    </section>
   );
 };
 
