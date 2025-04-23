@@ -70,7 +70,7 @@ const ResumenContenido: React.FC = () => {
         <section id="tecnologias" className="mt-10">
           <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-300 mb-6 text-center">🛠️ Tecnologías</h2>
           <div className="flex flex-wrap justify-center gap-6">
-            <Carta titulo="HTML" imagen="/img/html.png"/>
+            <Carta titulo="HTML" imagen="/img/HTMLYCSS.png"/>
             <Carta titulo="SpringBoot" imagen="/img/SpringBoot.png" />
             <Carta titulo="JavaScript" imagen="/img/JavaScript.jpg" />
             <Carta titulo="React" imagen="/img/React.png" />
