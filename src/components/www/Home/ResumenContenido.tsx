@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-scroll"; // Para scroll suave
 import { motion } from "framer-motion"; // Para animaciones suaves
 import Carta from "./Card";
 
